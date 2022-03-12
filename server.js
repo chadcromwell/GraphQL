@@ -146,11 +146,19 @@ const RootQueryType = new GraphQLObjectType({
             },
             description:'Where you can retrieve recipes',
             // Accepts arguments, if there are arguments it returns using a filter
-            resolve: (parent, args) => recipes.filter(
-                recipe =>
-                    recipe.id === args.id // Return matching ids
-                    || recipe.title.toLowerCase() === args.title.toLowerCase() // Return matching titles ignoring case
-            )
+            resolve: (parent, args) => {
+                // If args are passed, filter based off of args
+                if (Object.keys(args).length !== 0) {
+                    return recipes.filter(
+                        recipe =>
+                            recipe.id === args.id // Return matching ids
+                            || recipe.title.toLowerCase() === args.title.toLowerCase() // Return matching titles ignoring case
+                    )
+                    // Else, just return all recipes
+                } else {
+                    return recipes
+                }
+            }
         }
     })
 })
