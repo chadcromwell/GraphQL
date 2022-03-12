@@ -136,8 +136,21 @@ const RootQueryType = new GraphQLObjectType({
         // Recipes
         recipes: {
             type: new GraphQLList(RecipeType), // It returns a message that is a String
-            description:'List of all recipes',
-            resolve: () => recipes // What the object actually returns
+            args: {
+                id: {
+                    type: GraphQLInt
+                },
+                title: {
+                    type: GraphQLString
+                }
+            },
+            description:'Where you can retrieve recipes',
+            // Accepts arguments, if there are arguments it returns using a filter
+            resolve: (parent, args) => recipes.filter(
+                recipe =>
+                    recipe.id === args.id // Return matching ids
+                    || recipe.title.toLowerCase() === args.title.toLowerCase() // Return matching titles ignoring case
+            )
         }
     })
 })
