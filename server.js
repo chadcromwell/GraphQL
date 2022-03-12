@@ -10,6 +10,7 @@ const {
 const { GraphQLJSONObject} = require('graphql-type-json')
 const app = express()
 
+// The recipes
 const recipes = [
 {
     title: "Green Eggs and Ham",
@@ -27,6 +28,7 @@ const recipes = [
 }
 ]
 
+// Recipe Type
 const RecipeType = new GraphQLObjectType({
     name: 'Recipe',
     description: 'A recipe',
@@ -41,10 +43,12 @@ const RecipeType = new GraphQLObjectType({
     })
 })
 
+// Where we define all the root queries
 const RootQueryType = new GraphQLObjectType({
     name: 'Query', // Name of the object
     description: "Root Query", // Description for UI
     fields: () =>({ // The fields this object returns
+        // Recipes
         recipes: {
             type: new GraphQLList(RecipeType), // It returns a message that is a String
             description:'List of all recipes',
@@ -53,6 +57,7 @@ const RootQueryType = new GraphQLObjectType({
     })
 })
 
+// The GraphQL schema
 const schema = new GraphQLSchema({
     query: RootQueryType
 })
