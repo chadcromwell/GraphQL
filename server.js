@@ -88,7 +88,7 @@ const recipes = [
                     "crêpe. It's okay if it gets a little bunched up, you can always flatten it out once you flip " +
                     "it. If you make a hole, don't worry about it! It will likely not be noticeable once you fold " +
                     "your crêpes in the end.",
-                    "Cook for another 45 seconds",
+                    "Cook for another 45 seconds.",
                     "Using a silicone spatula, remove the crêpe from the skillet and stack the crêpes together on a " +
                     "plate."
                 ]
@@ -96,15 +96,15 @@ const recipes = [
             {
                 title: "Assembling",
                 steps: [
-                    "Lay out one crêpe",
-                    "Spread your favourite fillings across half of the crêpe",
-                    "Add your favourite toppings on the filling",
-                    "Fold the crêpe in half",
-                    "Fold the crêpe in two thirds",
-                    "Fold the crêpe in half again",
-                    "You should now have a nice triangle shape",
-                    "Dust with icing sugar or top with real maple syrup",
-                    "Enjoy"
+                    "Lay out one crêpe.",
+                    "Spread your favourite fillings across half of the crêpe.",
+                    "Add your favourite toppings on the filling.",
+                    "Fold the crêpe in half.",
+                    "Fold the crêpe in two thirds.",
+                    "Fold the crêpe in half again.",
+                    "You should now have a nice triangle shape.",
+                    "Dust with icing sugar or top with real maple syrup.",
+                    "Enjoy."
                 ]
             }
         ]
